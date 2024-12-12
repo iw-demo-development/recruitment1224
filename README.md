@@ -1,4 +1,4 @@
-##SOLUTION NOTES
+## SOLUTION NOTES
 
 - To refactor the code I encapsulated different versions of algorythm for changing the quality/sell_in into separate instances of QualityStrategy. It allows for easy modification of existing strategies for products and adding new custom strategies in the future. All defined strategies extend the AbstractQualityUpdateStrategy, but that strategy implements a strategy inferface, so in case of totally different strategy being needed, it can be also easily fitted into the system as long as it satisfies the required interface. 
 
@@ -7,6 +7,8 @@
 - Because of the encapsulation of the logic into smaller pieces, that follow the SOLID principles, it is also possible to add tests to each of the new methods/strategies - I assumed it is not the task of this coding challenge so I am not adding any more tests than what was originally provided.
 
 - I left unchanged the convention of naming of the classes/methods (cammel case) and properties (underscore), as I assume that is what the rest of the project follows.   
+
+- I have added type definitions to the method parameters (could have been skippedd, but it's good to add them when we know what is the type of expected value and I assumed here we expect those types). 
  
 ***
 

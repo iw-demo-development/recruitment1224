@@ -6,7 +6,7 @@ use App\QualityUpdateStrategy\QualityStrategyFactory;
 
 final class GildedRose
 {
-    public function updateQuality($item)
+    public function updateQuality(Item $item)
     {
         QualityStrategyFactory::createStrategy($item->name)->updateQualityAndSellIn($item);
     }
