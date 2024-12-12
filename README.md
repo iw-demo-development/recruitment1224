@@ -1,3 +1,15 @@
+##SOLUTION NOTES
+
+- To refactor the code I encapsulated different versions of algorythm for changing the quality/sell_in into separate instances of QualityStrategy. It allows for easy modification of existing strategies for products and adding new custom strategies in the future. All defined strategies extend the AbstractQualityUpdateStrategy, but that strategy implements a strategy inferface, so in case of totally different strategy being needed, it can be also easily fitted into the system as long as it satisfies the required interface. 
+
+- The factory class hides the logic of creating instance of particular strategy - it provides one method that will determine the correct strategy depending on the name of the item, and that again makes new products with their own strategies easy to introduce.
+
+- Because of the encapsulation of the logic into smaller pieces, that follow the SOLID principles, it is also possible to add tests to each of the new methods/strategies - I assumed it is not the task of this coding challenge so I am not adding any more tests than what was originally provided.
+
+- I left unchanged the convention of naming of the classes/methods (cammel case) and properties (underscore), as I assume that is what the rest of the project follows.   
+ 
+***
+
 Poniższe zadanie zostało stworzone do ćwiczenia praktycznych umiejętności refaktoryzacji kodu. 
 W katalogu tests znajduje się 19 testów, które w momencie rozpoczęcia zadania wszystkie uruchamiają
 się i przechodzą prawidłowo. Testy te będą podstawowym narzędziem umożliwiającym kontrolę refaktoryzowanego kodu.
