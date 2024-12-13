@@ -10,6 +10,7 @@ class LegendaryQualityStrategy extends AbstractQualityUpdateStrategy
 
     public function updateQualityAndSellIn(Item $item): Item
     {
+        //Following check can be skipped, but it ensures that the quality of legendary item is always at maximum
         if ($item->quality != $this->max_quality) {
             $item->quality = $this->max_quality;
         }

@@ -10,7 +10,7 @@ class CustomBackstagePassesQualityStrategy extends AbstractQualityUpdateStrategy
     {
         if ($this->canQualityIncrease($item)) {
             $item->quality += $this->calculateQualityModifier($item);
-        } else {
+        } elseif ($item->quality < $this->max_quality) {
             $item->quality = $this->max_quality;
         }
 

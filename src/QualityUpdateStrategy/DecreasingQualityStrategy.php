@@ -10,7 +10,7 @@ class DecreasingQualityStrategy extends AbstractQualityUpdateStrategy
     {
         if ($this->canQualityDecrease($item)) {
             $item->quality -= $this->calculateQualityModifier($item);
-        } else {
+        } elseif ($item->quality > $this->min_quality) {
             $item->quality = $this->min_quality;
         }
 
